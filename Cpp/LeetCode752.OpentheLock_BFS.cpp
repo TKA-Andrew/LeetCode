@@ -33,7 +33,11 @@ public:
     int openLock(std::vector<std::string>& deadends, std::string target) {
         std::unordered_set<std::string> deads;
         std::unordered_set<std::string> visited;
+<<<<<<< HEAD
         for (const auto& s:deadends) {
+=======
+        for (std::string s:deadends) {
+>>>>>>> 3fa6a55 (LeetCode752 using BFS)
             deads.insert(s);
         }
         int step = 0;
