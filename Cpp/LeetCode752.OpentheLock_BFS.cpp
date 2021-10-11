@@ -33,7 +33,7 @@ public:
     int openLock(std::vector<std::string>& deadends, std::string target) {
         std::unordered_set<std::string> deads;
         std::unordered_set<std::string> visited;
-        for (std::string s:deadends) {
+        for (const auto& s:deadends) {
             deads.insert(s);
         }
         int step = 0;
@@ -52,7 +52,7 @@ public:
                     continue;
                 }
                 std::vector<std::string> nextCombinations = getNextCombinations(curCombination);
-                for (auto combination:nextCombinations) {
+                for (const auto& combination:nextCombinations) {
                     if (!hasVisited(visited, combination)) {
                         q.push(combination);
                         visited.insert(combination);
