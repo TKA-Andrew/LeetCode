@@ -26,16 +26,16 @@
     We will have trees = [[1,2], [3,3], [5,2], [7,4], [9,5], [8,8], [7,9], [5,8], [5,6], [3,9]].
     Our expected answer will be [[1,2], [5,2], [9,5], [8,8], [7,9], [3,9]]
 
-    1) We sort the trees according to their x coordinates. If they have same x coordinate, sort according to y coordinates
-        sortedTrees = [[1,2], [3,3], [3,9], [5,2], [5,6], [5,8], [7,4], [7,9], [8,8], [9,5]]
+    1) We sort the trees according to their x coordinates. If they have same x coordinate, sort according to y coordinates.
+       We will get sortedTrees = [[1,2], [3,3], [3,9], [5,2], [5,6], [5,8], [7,4], [7,9], [8,8], [9,5]]
 
-    2) Now, we traverse through the sorted trees, and an array[] called 'hull' to push the coordinates of the trees. 
-       We will get the fence's coordinates from lower part then upper part in anti clockwise direction.
+    2) Now, we traverse through the sorted trees, and use an array[] called 'hull' to push the coordinates of the potential fences. 
+       We will get the fence's coordinates from lower part then upper part in anti-clockwise direction.
 
     3) For every 2 latest trees in the hull and the next tree, we need to check whether their direction is in clockwise direction.
-       If the next tree is in clockwise direction, it means it is a outer tree that should be fence.
+       To get the direction of three trees:
 
-        let's say we take the sorted trees is [treeP, treeQ, treeR]
+        let's say we take the sorted trees are [treeP, treeQ, treeR]
 
                   treeR
                /  
@@ -51,22 +51,22 @@
         gradientPR = -----------------------------
                         treeR[0] - treeR[0]
 
-        difference in gradient = gradientPR - gradientPQ
+        differenceInGradient = gradientPR - gradientPQ
 
-        if (difference in gradient > 0) {
+        if (differenceInGradient > 0) {
             means P -> Q -> R is in anti clockwise direction
-        } else if (difference in gradient < 0) {
+        } else if (differenceInGradient < 0) {
             means P-> Q -> R is in clockwise direction
         }
 
-        Since we only want to know the sign of the difference instead of exact magnitude,
-        we can simplify the equeation to:
+        Since we only want to know the direction instead of exact magnitude,
+        we can simplify the equation to:
             isClockwise = ((treeR[1] - treeP[1])*(treeQ[0] - treeP[0]) - (treeR[0] - treeP[0])*(treeQ[1] - treeP[1])) < 0
 
     4) Now we can use the above equation to know whether the direction of latest 3 trees are in clockwise direction,
-       If yes, we will remove the tree from our hull.
+       If yes, we will remove the last tree from our hull.
 
-       For example, in third loop, we already have [1,2] and [3,3] in our hull array, and we are checking it with the [3,9] tree:
+       For example, in third loop of traversal, we will have [1,2] and [3,3] in our hull array, and we are checking it with the [3,9] tree:
 
         9           c               x
         8                   x           x
@@ -80,7 +80,7 @@
         0   1   2   3   4   5   6   7   8   9   
         
         from [1,2] -> [3,3] -> [3,9] it is obviously anti-clockwise direction, so we will not remove last tree in hull, 
-        and will push the [3,9] into hull.
+        and will push the [3,9] into hull. We will get hull = [[1,2], [3,3], [3,9]]
 
         Now in the fourth loop, we will check [3,3], [3,9] and [5,2]:
 
