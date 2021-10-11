@@ -24,15 +24,3 @@ public:
         return ret;
     }
 };
-
-// test
-int main () {
-    Solution test;
-    std::cout << "Input String = 'cabaa', k = 3" << '\n';
-    std::cout << "Expected answer: aaabc" << '\n'; 
-    std::cout << "Returned answer: " << (test.orderlyQueue("cabaa", 3)) << '\n';
-    std::cout << "Input String = 'cabaa', k = 1" << '\n';
-    std::cout << "Expected answer: aacab" << '\n'; 
-    std::cout << "Returned answer: " << (test.orderlyQueue("cabaa", 1)) << '\n';
-    return 0;
-}
