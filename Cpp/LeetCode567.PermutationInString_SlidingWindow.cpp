@@ -31,9 +31,21 @@ public:
                     matched++;
                 }
             }
-            // shrink the window when window size is equal or greater than s1StringSize
-            while ((right - left) >= s1StringSize) {
-                if (matched == matchesNeeded) {
+
+            // SIDE NOTES: There are two options when deciding when to shrink the window
+            /*
+            1) Shrink the window when window size is greater and equal to target string size,
+                then, return true when all the characters matched
+            2) Shrink the window when we have all the needed characters,
+                then return true when the window size is equal to target string size
+
+            Second option is easier to understand and logical as first one doesn't really need a while loop
+            */
+
+            // shrink the window when we have all the characters needed in window, 
+            // until window size is equal to s1StringSize
+            while (matched == matchesNeeded) {
+                if (right-left == s1StringSize) {
                     return true;
                 }
                 char d = s2[left];
