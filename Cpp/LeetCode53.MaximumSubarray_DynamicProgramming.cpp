@@ -1,3 +1,7 @@
+// using Dynamic Programming
+// Time Complexity: O(n)
+// Space COmpelxity: O(n)
+
 #include <vector>
 
 class Solution {
