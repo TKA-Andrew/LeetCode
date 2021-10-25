@@ -9,7 +9,7 @@ class Solution {
 public:
     int minInsertions(std::string s) {
         // definition of dp: 
-        //      dp[i][j] is the longest palindromic subsequence for substring s[i..j]
+        //      dp[i][j] is the mininum insertions needed for substring s[i..j]
         
         // final answer should be dp[0][n-1]
         
