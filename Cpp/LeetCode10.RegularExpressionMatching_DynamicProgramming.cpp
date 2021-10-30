@@ -6,7 +6,7 @@ public:
         return dp(s,0,p,0);
     }
     
-    bool dp(std::string s, int i, std::string p, int j) {
+    bool dp(std::string& s, int i, std::string& p, int j) {
         int sSize = s.size();
         int pSize = p.size();
         while (i<sSize && j<pSize) {
