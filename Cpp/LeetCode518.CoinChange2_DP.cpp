@@ -1,3 +1,6 @@
+// time complexity: O(N*amount)
+// space complexity: O(N*amount)
+
 #include <vector>
 
 class Solution {
