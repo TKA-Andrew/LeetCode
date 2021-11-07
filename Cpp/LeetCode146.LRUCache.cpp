@@ -69,7 +69,7 @@ public:
     }
     
     int get(int key) {
-        if (!map[key]) {
+        if (map.find(key) == map.end()) {
             return -1;        
         }
         makeRecently(key);
@@ -77,7 +77,7 @@ public:
     }
     
     void put(int key, int value) {
-        if (map[key]) {
+        if (map.find(key) != map.end()) {
             deleteKey(key);
             addRecently(key, value);
             return;
