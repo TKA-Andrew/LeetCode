@@ -1,3 +1,6 @@
+// time complexity: O(NM)
+// space complexity: O(N)
+
 #include <vector>
 
 class Solution {
