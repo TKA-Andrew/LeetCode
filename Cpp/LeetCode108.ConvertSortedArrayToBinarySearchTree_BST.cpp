@@ -16,11 +16,11 @@
  */
 class Solution {
 public:
-    TreeNode* sortedArrayToBST(vector<int>& nums) {
+    TreeNode* sortedArrayToBST(std::vector<int>& nums) {
         return constructMinHeightBST(nums, 0, nums.size() -1);
     }
     
-    TreeNode* constructMinHeightBST(vector<int>& nums, int startIdx, int endIdx) {
+    TreeNode* constructMinHeightBST(std::vector<int>& nums, int startIdx, int endIdx) {
         if (endIdx<startIdx) {
             return nullptr;
         }
