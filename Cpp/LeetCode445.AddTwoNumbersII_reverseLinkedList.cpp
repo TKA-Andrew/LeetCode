@@ -13,7 +13,6 @@
  */
 class Solution {
 public:
-    int carry = 0;
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         auto l1copy = reverse(l1);
         auto l2copy = reverse(l2);
