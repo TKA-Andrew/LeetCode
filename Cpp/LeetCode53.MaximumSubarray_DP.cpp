@@ -31,7 +31,7 @@ int N = nums.size();
         
         // STATE TRANSITION, 
         //          { nums[0], n = 0
-        // dp(i) =  { nums[i], if ( nums[i] > nums[i] + dp[i-1]) && n>=1
+        // dp[i] =  { nums[i], if ( nums[i] > nums[i] + dp[i-1]) && n>=1
         //          { dp[i-1] + nums[i], if ( nums[i] <= nums[i] + dp[i-1]) && n>=1
         
         for (int i=1;i<N;i++) {

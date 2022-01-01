@@ -19,7 +19,7 @@ public:
         
         // STATE TRANSITION, 
         //          { 0, i = 0
-        // dp(i) =  { 1, i = 1
+        // dp[i] =  { 1, i = 1
         //          { dp[i-1] + dp[i-2], i>=2
         
         // CHOICE
