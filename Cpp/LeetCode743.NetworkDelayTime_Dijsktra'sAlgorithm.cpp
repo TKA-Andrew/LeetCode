@@ -53,9 +53,7 @@ public:
 
         int maxTime = -1;
         for (auto time:minTravelCost) {
-            if (time != INT_MAX && time != 0) {
-                maxTime=std::max(maxTime, time);
-            }
+            maxTime=std::max(maxTime, time);
         }
 
         return maxTime;
