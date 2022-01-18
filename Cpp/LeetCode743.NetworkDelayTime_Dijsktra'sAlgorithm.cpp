@@ -24,7 +24,7 @@ public:
         while (visited.size() != n) {
 
             // FIND UNVISITED VERTEX WITH MINIMUM TRAVEL COST
-            auto [curretnVertex, currentMinTravelCost] = getVertexWithMinTravelCost(minTravelCost, visited);
+            auto [currentVertex, currentMinTravelCost] = getVertexWithMinTravelCost(minTravelCost, visited);
 
             // ENDING CONDITION
             if (currentMinTravelCost == INT_MAX) {
@@ -32,10 +32,10 @@ public:
             }
 
             // UPDATE VISITED VERTICES
-            visited.insert(curretnVertex);
+            visited.insert(currentVertex);
 
             // SCAN THROUGH NEIGHBOURING VERTICES
-            for (auto edgeInfo: graph[curretnVertex]) {
+            for (auto edgeInfo: graph[currentVertex]) {
                 int vertexIdx = edgeInfo.first;
                 if (visited.find(vertexIdx) != visited.end()) {
                     continue;
