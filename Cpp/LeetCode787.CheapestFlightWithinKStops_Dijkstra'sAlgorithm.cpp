@@ -13,10 +13,10 @@ public:
         for (int i=0; i<flights.size(); i++) {
             graph[flights[i][0]].push_back({flights[i][1],flights[i][2]});
         }
-        return dijsktraSingleTarget(graph, src, dst, n, k);
+        return dijkstraSingleTarget(graph, src, dst, n, k);
     }
     
-    int dijsktraSingleTarget(Graph graph, int source, int target, int n, int k) {
+    int dijkstraSingleTarget(Graph graph, int source, int target, int n, int k) {
         
         std::vector<int> minTravelCost(n, INT_MAX);
         std::vector<int> stops(n, INT_MAX);
