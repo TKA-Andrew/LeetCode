@@ -34,7 +34,7 @@ public:
         while (!maxHeap.empty()) {
             auto [curTravelCost, curVertex] = maxHeap.top();
             maxHeap.pop();
-            if (curVertex == target || curTravelCost == 0) {
+            if (curVertex == target) {
                 break;
             }
             visited[curVertex] = true;
