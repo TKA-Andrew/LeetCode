@@ -16,7 +16,7 @@ public:
         std::vector<std::vector<int>> minTravelCost(row, std::vector<int> (col, INT_MAX));
         minTravelCost[0][0] = 0;
         
-        int moves[4][4] = {{-1,0},{1,0},{0,-1},{0,1}};
+        int moves[4][2] = {{-1,0},{1,0},{0,-1},{0,1}};
         
         MinHeap minHeap;
         minHeap.push({0, 0, 0}); // {effort, r, c}
