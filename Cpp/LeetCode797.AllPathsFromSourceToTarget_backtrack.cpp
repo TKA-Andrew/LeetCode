@@ -4,7 +4,7 @@ class Solution {
 public:
     std::vector<std::vector<int>> tracks;
     
-    void backtrack(std::vector<std::vector<int>>& graph, int currentNode, std::vector<int> track)
+    void backtrack(std::vector<std::vector<int>>& graph, int currentNode, std::vector<int> &track)
     {
         // termination condition
         if (currentNode == graph.size() - 1)
